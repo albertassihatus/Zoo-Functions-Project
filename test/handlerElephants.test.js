@@ -5,6 +5,10 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants()).toBeUndefined();
   });
 
+  it('Passando por argumento um objeto vazio ({}) deve retornar a string Parâmetro inválido, é necessário uma string', () => {
+    expect(handlerElephants({})).toBe('Parâmetro inválido, é necessário uma string')();
+  });
+
   it('Verifica a quantidade de elefantes = 4', () => {
     expect(handlerElephants('count')).toBe(4);
   });
@@ -32,5 +36,9 @@ describe('Testes da função HandlerElephants', () => {
     const actual = handlerElephants('availability');
     const expected = ['Friday', 'Saturday', 'Sunday', 'Tuesday'];
     expect(actual).toEqual(expected);
+  });
+
+  it('Passada uma string que não contempla uma funcionalidade deve retornar null', () => {
+    expect(handlerElephants('')).toBeNull();
   });
 });

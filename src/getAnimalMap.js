@@ -1,6 +1,8 @@
 const { species } = require('../data/zoo_data');
 const data = require('../data/zoo_data');
 
+// https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
 function getNames(options, residents) {
   return residents.reduce((array, animal) => {
     if ((options.sex === animal.sex) || (!options.sex)) {
